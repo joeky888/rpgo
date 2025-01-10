@@ -5,6 +5,7 @@ export const handler: Handlers = {
   async GET(_req, _ctx) {
     // const resp = await ctx.render();
     // resp.headers.set("X-Custom-Header", "Hello");
+    //
 
     const bscProvider = new ethers.JsonRpcProvider(
       "https://bsc-dataseed.binance.org/",
@@ -14,7 +15,7 @@ export const handler: Handlers = {
     const body = await bscProvider
       .getBalance("0x06f04846213cc642015fd01E2c2B5302eCBfE8aB")
       .then((balance) => {
-        console.log(balance);
+        // console.log(balance);
         return balance;
       })
       .catch((error) => {
