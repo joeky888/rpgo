@@ -1,14 +1,9 @@
 import {
   configure,
   getConsoleSink,
-  ConsoleSinkOptions,
   getLogger,
   getAnsiColorFormatter,
 } from "@logtape/logtape";
-
-// const console_options: ConsoleSinkOptions = {
-//   // formatter: {},
-// };
 
 await configure({
   sinks: {

@@ -12,6 +12,7 @@ export const handler = async (_req: Request, _ctx: FreshContext): Response => {
     logger.info("info!!");
     logger.warn("warn!!");
     logger.error("error!!");
+    logger.fatal("fatal!!");
 
     const bscProvider = new ethers.JsonRpcProvider(
       "https://bsc-dataseed.binance.org/",
@@ -21,14 +22,12 @@ export const handler = async (_req: Request, _ctx: FreshContext): Response => {
     const body = await bscProvider
       .getBalance(wallet_addr)
       .then((balance) => {
-        // console.log(balance);
         return balance;
       })
       .catch((error) => {
         console.error(error);
       });
 
-    // const uuid = crypto.randomUUID();
     return new Response(
       JSON.stringify({
         message: body?.toString(),
