@@ -1,5 +1,6 @@
 import { FreshContext } from "$fresh/server.ts";
-import { ethers } from "npm:ethers@^6.13.5";
+import { ethers } from "ethers";
+import { logger } from "@/tools/logger.ts";
 
 // curl http://localhost:8000/api/balance?wallet=0x06f04846213cc642015fd01E2c2B5302eCBfE8aB
 export const handler = async (_req: Request, _ctx: FreshContext): Response => {
@@ -7,6 +8,10 @@ export const handler = async (_req: Request, _ctx: FreshContext): Response => {
     const url = new URL(_req.url);
     // console.log(url.searchParams.get("wallet"));
     const wallet_addr = url.searchParams.get("wallet")!;
+    logger.debug("debug!!");
+    logger.info("info!!");
+    logger.warn("warn!!");
+    logger.error("error!!");
 
     const bscProvider = new ethers.JsonRpcProvider(
       "https://bsc-dataseed.binance.org/",

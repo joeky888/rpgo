@@ -1,4 +1,4 @@
-import { ethers } from "npm:ethers@^6.13.5";
+import { ethers } from "ethers";
 import { Handlers, FreshContext, PageProps } from "$fresh/server.ts";
 
 export const handler: Handlers = {
