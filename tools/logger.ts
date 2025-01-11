@@ -1,8 +1,8 @@
 import {
   configure,
+  getAnsiColorFormatter,
   getConsoleSink,
   getLogger,
-  getAnsiColorFormatter,
 } from "@logtape/logtape";
 
 await configure({

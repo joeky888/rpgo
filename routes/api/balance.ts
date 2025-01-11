@@ -3,16 +3,19 @@ import { ethers } from "ethers";
 import { logger } from "@/tools/logger.ts";
 
 // curl http://localhost:8000/api/balance?wallet=0x06f04846213cc642015fd01E2c2B5302eCBfE8aB
-export const handler = async (_req: Request, _ctx: FreshContext): Response => {
+export const handler = async (
+  _req: Request,
+  _ctx: FreshContext,
+): Promise<Response> => {
   if (_req.method === "GET") {
     const url = new URL(_req.url);
-    // console.log(url.searchParams.get("wallet"));
     const wallet_addr = url.searchParams.get("wallet")!;
+
     logger.debug("debug!!");
-    logger.info("info!!");
-    logger.warn("warn!!");
-    logger.error("error!!");
-    logger.fatal("fatal!!");
+    // logger.info("info!!");
+    // logger.warn("warn!!");
+    // logger.error("error!!");
+    // logger.fatal("fatal!!");
 
     const bscProvider = new ethers.JsonRpcProvider(
       "https://bsc-dataseed.binance.org/",
@@ -40,4 +43,6 @@ export const handler = async (_req: Request, _ctx: FreshContext): Response => {
       },
     );
   }
+
+  throw new Error("Unsuppored method");
 };

@@ -23,7 +23,7 @@ export const handler: Handlers = {
       });
 
     // const uuid = crypto.randomUUID();
-    return new Response(JSON.stringify(body.toString()), {
+    return new Response(JSON.stringify(body?.toString()), {
       headers: { "Content-Type": "application/json" },
     });
   },
