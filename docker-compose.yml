@@ -1,0 +1,12 @@
+services:
+  db:
+    image: ghcr.io/tursodatabase/libsql-server:latest
+    platform: linux/amd64
+    ports:
+      - "18080:8080"
+      # - "5001:5001"
+    environment:
+      - SQLD_NODE=primary
+      - SQLD_HTTP_AUTH=basic:YWRtaW46MTIzNDU2 # admin:123456
+    volumes:
+      - ./_data/libsql:/var/lib/sqld
