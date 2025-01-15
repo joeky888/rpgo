@@ -10,8 +10,8 @@ Open dbeaver and add a new connection "libsql"
 
 Enter server url http://localhost:18080
 
-User: <EMPTY>
-Pass: basic:YWRtaW46MTIzNDU2
+- User: "leave it empty"
+- Pass: basic:YWRtaW46MTIzNDU2
 
 ```fish
 deno task start
